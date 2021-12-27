@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WhoSalerDamian.Database;
+using WhoSalerDamian.Services;
 
 namespace WhoSalerDamian
 {
@@ -32,6 +33,8 @@ namespace WhoSalerDamian
                 config.UseSqlServer(Configuration.GetConnectionString("Application")));
 
             services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddScoped<IShopServiceInterface, ShopService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

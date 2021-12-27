@@ -1,0 +1,47 @@
+@model IEnumerable<WhoSalerDamian.Entities.ShopEntity>
+
+@{
+    ViewBag.Title = "List of your shops";
+}
+
+<h2>List of your shops</h2>
+
+<form method="GET" class="row row-cols-lg-auto g-3 align-items-center">
+    <div class="col-12">
+        <input type="text" name="name" placeholder="Filter by name" class="form-control"/>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary ml-2">Search</button>
+    </div>
+    
+</form>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Shop name</th>
+        <th>Shop address</th>
+        <th style="width: 105px;"></th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td colspan="3">Add your first shop</td>
+        </tr>
+    }
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.ShopName</td>
+            <td>@item.ShopRoad</td>
+            <td>
+                <button class="btn"><i class="bi bi-three-dots"></i></button>
+                <button class="btn"><i class="bi bi-pencil-square"></i></button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

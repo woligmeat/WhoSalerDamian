@@ -2,16 +2,27 @@
 @inject SignInManager<IdentityUser> signInManager
 
 <ul class="navbar-nav">
+    
+        
+    
     @if (signInManager.IsSignedIn(User))
     {
-        <li class="nav-item">
-            <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index">@User.Identity.Name</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                @User.Identity.Name
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Profile</a></li>
+                @* <li><a class="dropdown-item" asp-controller="User" asp-action="Edit">Edit</a></li> *@
+                <li>
+                    <form class="form-check-inline dropdown-item m-0" asp-area="Identity" asp-page="/Account/Logout">
+                        <button type="submit" class="link-danger btn p-0">Logout</button>
+                    </form>
+                </li>
+            </ul>
         </li>
-        <li class="nav-item">
-            <form class="form-check-inline" asp-area="Identity" asp-page="/Account/Logout" >
-                <button type="submit" class="nav-link btn btn-link">Logout</button>
-            </form>
-        </li>
+        
+        
     }
     else
     {
@@ -19,7 +30,7 @@
             <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
         </li>
         <li class="nav-item">
-             <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
-         </li>
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        </li>
     }
 </ul> 

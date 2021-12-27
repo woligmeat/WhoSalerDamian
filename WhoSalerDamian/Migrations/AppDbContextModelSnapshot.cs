@@ -219,6 +219,44 @@ namespace WhoSalerDamian.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("WhoSalerDamian.Entities.ShopEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("OwnerUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ShopCity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShopEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShopName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShopOwnerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShopPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShopRoad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShopZipCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerUserId");
+
+                    b.ToTable("Shops");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -268,6 +306,15 @@ namespace WhoSalerDamian.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WhoSalerDamian.Entities.ShopEntity", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "OwnerUser")
+                        .WithMany()
+                        .HasForeignKey("OwnerUserId");
+
+                    b.Navigation("OwnerUser");
                 });
 #pragma warning restore 612, 618
         }
