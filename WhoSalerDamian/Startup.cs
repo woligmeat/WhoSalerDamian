@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WhoSalerDamian.Database;
 using WhoSalerDamian.Services;
+using WhoSalerDamian.Services.Wholesalers;
 
 namespace WhoSalerDamian
 {
@@ -34,6 +35,7 @@ namespace WhoSalerDamian
 
             services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
             services.AddScoped<IShopServiceInterface, ShopService>();
+            services.AddScoped<IWholesalersServiceInterface, WholesalersService>();
             
         }
 

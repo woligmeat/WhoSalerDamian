@@ -257,6 +257,44 @@ namespace WhoSalerDamian.Migrations
                     b.ToTable("Shops");
                 });
 
+            modelBuilder.Entity("WhoSalerDamian.Entities.WholesalersEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("OwnerUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("WholesalerCity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WholesalerEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WholesalerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WholesalerOwnerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WholesalerPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WholesalerRoad")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WholesalerZipCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerUserId");
+
+                    b.ToTable("Wholesalers");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -309,6 +347,15 @@ namespace WhoSalerDamian.Migrations
                 });
 
             modelBuilder.Entity("WhoSalerDamian.Entities.ShopEntity", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "OwnerUser")
+                        .WithMany()
+                        .HasForeignKey("OwnerUserId");
+
+                    b.Navigation("OwnerUser");
+                });
+
+            modelBuilder.Entity("WhoSalerDamian.Entities.WholesalersEntity", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "OwnerUser")
                         .WithMany()

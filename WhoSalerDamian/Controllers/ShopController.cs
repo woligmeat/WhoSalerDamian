@@ -14,7 +14,7 @@ namespace WhoSalerDamian.Controllers
             _shopServiceInterface = shopServiceInterface;
         }
         
-        // GET
+        
         public IActionResult Index()
         {
             return View();

@@ -1,68 +1,63 @@
-@model ShopModel
+@model WholesalersModel;
 @{
-    ViewData["Title"] = "Shops";
+    ViewData["Title"] = "Wholesalers";
 }
 
 <div class="row">
     <div class="col-md-6">
-        <h2>Add new shop</h2>
-        <p>Add your shop for buy products</p>
+        <h2>Add new wholesaler</h2>
         <hr class="hr"/>
         <form method="post" asp-action="Add">
             <div class="mb-3">
-                <label asp-for="ShopName"></label>
-                <input asp-for="ShopName" class="form-control" />
+                <label asp-for="WholesalerName"></label>
+                <input asp-for="WholesalerName" class="form-control" />
                 @* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> *@
             </div>
             
             <div class="mb-3">
-                <label asp-for="ShopOwnerName"></label>
-                <input asp-for="ShopOwnerName" class="form-control" />
+                <label asp-for="WholesalerOwnerName"></label>
+                <input asp-for="WholesalerOwnerName" class="form-control" />
                 @* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> *@
             </div>
             
             <div class="mb-3">
-                <label asp-for="ShopCity"></label>
-                <input asp-for="ShopCity" class="form-control" />
+                <label asp-for="WholesalerCity"></label>
+                <input asp-for="WholesalerCity" class="form-control" />
                 @* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> *@
             </div>
             
             <div class="mb-3">
-                <label asp-for="ShopRoad"></label>
-                <input asp-for="ShopRoad" class="form-control" />
+                <label asp-for="WholesalerRoad"></label>
+                <input asp-for="WholesalerRoad" class="form-control" />
                 @* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> *@
             </div>
             
             <div class="mb-3">
-                <label asp-for="ShopZipCode"></label>
-                <input asp-for="ShopZipCode" class="form-control" />
+                <label asp-for="WholesalerZipCode"></label>
+                <input asp-for="WholesalerZipCode" class="form-control" />
                 @* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> *@
             </div>
             
             <div class="mb-3">
-                <label asp-for="ShopPhone"></label>
-                <input asp-for="ShopPhone" class="form-control" />
+                <label asp-for="WholesalerPhone"></label>
+                <input asp-for="WholesalerPhone" class="form-control" />
                 @* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> *@
             </div>
             
             <div class="mb-3">
-                <label asp-for="ShopEmail"></label>
-                <input asp-for="ShopEmail" class="form-control" />
+                <label asp-for="WholesalerEmail"></label>
+                <input asp-for="WholesalerEmail" class="form-control" />
                 @* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> *@
             </div>
             
-            <button type="submit" class="btn btn-primary">Add my shop</button>
+            <button type="submit" class="btn btn-primary">Add wholesaler</button>
         </form>
         @* <button class="btn btn-primary" asp-controller="Shop" asp-action="Index">Add</button> *@
     </div>
     <div class="col-md-6">
-        <h2>Shop List</h2>
-        <p>Look at the shop list below or show all</p>
+        <h2>Wholesalers list</h2>
+        <p>Look at the wholesalers list below or show all</p>
         <hr class="hr" />
-        <button class="btn btn-primary" asp-controller="Shop" asp-action="List">Show all</button>
+        <button class="btn btn-primary" asp-controller="Wholesalers" asp-action="ListOwner">Show all</button>
     </div>
 </div>
-
-
-
-
