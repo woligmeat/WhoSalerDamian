@@ -163,3 +163,8 @@
 /Users/damianpedrycz/RiderProjects/WhoSalerDamian/WhoSalerDamian/obj/Debug/net5.0/Razor/Views/Shop/Index.cshtml.g.cs
 /Users/damianpedrycz/RiderProjects/WhoSalerDamian/WhoSalerDamian/obj/Debug/net5.0/Razor/Views/Shop/Add.cshtml.g.cs
 /Users/damianpedrycz/RiderProjects/WhoSalerDamian/WhoSalerDamian/obj/Debug/net5.0/Razor/Views/Shop/List.cshtml.g.cs
+/Users/damianpedrycz/RiderProjects/WhoSalerDamian/WhoSalerDamian/obj/Debug/net5.0/Razor/Views/Product/Index.cshtml.g.cs
+/Users/damianpedrycz/RiderProjects/WhoSalerDamian/WhoSalerDamian/obj/Debug/net5.0/Razor/Views/Wholesalers/Add.cshtml.g.cs
+/Users/damianpedrycz/RiderProjects/WhoSalerDamian/WhoSalerDamian/obj/Debug/net5.0/Razor/Views/Wholesalers/Index.cshtml.g.cs
+/Users/damianpedrycz/RiderProjects/WhoSalerDamian/WhoSalerDamian/obj/Debug/net5.0/Razor/Views/Wholesalers/ListOwner.cshtml.g.cs
+/Users/damianpedrycz/RiderProjects/WhoSalerDamian/WhoSalerDamian/obj/Debug/net5.0/Razor/Views/Wholesalers/ListUser.cshtml.g.cs

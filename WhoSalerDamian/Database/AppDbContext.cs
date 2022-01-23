@@ -8,6 +8,8 @@ namespace WhoSalerDamian.Database
     {
         public DbSet<ShopEntity> Shops { get; set; }
         public DbSet<WholesalersEntity> Wholesalers { get; set; }
+        
+        public DbSet<ProductEntity> Products { get; set; }
         public AppDbContext(DbContextOptions options) : base(options) {}
     }
 }

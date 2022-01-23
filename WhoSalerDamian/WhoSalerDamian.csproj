@@ -96,6 +96,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Services\Product" />
       <Folder Include="wwwroot\lib\bootstrap\dist" />
     </ItemGroup>
 
